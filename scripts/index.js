@@ -65,6 +65,7 @@ ambient.addEventListener("click", ()=>{
       ambient.addEventListener("click", ()=>{
       theme.unselectedAmbientLight();
       sound.ambient.pause();
+      
       })
     } else {
       ambient.addEventListener("click", ()=>{

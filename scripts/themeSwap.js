@@ -50,9 +50,7 @@ export default function themeSwap({
 
   function selectedAmbientLight(){
     ambient.classList.add('bg-light')
-    rain.classList.remove('bg-light')
-    street.classList.remove('bg-light')
-    bonfire.classList.remove('bg-light')
+    
   }
   function unselectedAmbientLight(){
     ambient.classList.remove('bg-light')
@@ -62,10 +60,9 @@ export default function themeSwap({
 
 
   function selectedRainLight(){
-    ambient.classList.remove('bg-light')
+    
     rain.classList.add('bg-light')
-    street.classList.remove('bg-light')
-    bonfire.classList.remove('bg-light')
+    
   }
 
   function unselectedRainLight(){
@@ -75,10 +72,9 @@ export default function themeSwap({
 
 
   function selectedStreetLight(){
-    ambient.classList.remove('bg-light')
-    rain.classList.remove('bg-light')
+    
     street.classList.add('bg-light')
-    bonfire.classList.remove('bg-light')
+    
   }
 
   function unselectedStreetLight(){
@@ -87,9 +83,6 @@ export default function themeSwap({
   
 
   function selectedBonfireLight(){
-    ambient.classList.remove('bg-light')
-    rain.classList.remove('bg-light')
-    street.classList.remove('bg-light')
     bonfire.classList.add('bg-light')
   }
 
