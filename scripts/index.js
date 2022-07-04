@@ -1,4 +1,4 @@
-import{displayMin,displaySec,buttonPlay,buttonPause,buttonStop,increaseTime,decreaseTime,setTime,separator,body,main,box,whiteTheme,darkTheme,ambient,rain,street,bonfire} from "./documents.js";
+import{displayMin,displaySec,buttonPlay,buttonPause,buttonStop,increaseTime,decreaseTime,setTime,separator,body,main,box,whiteTheme,darkTheme,ambient,rain,street,bonfire,volumeA,volumeR,volumeB,volumeS} from "./documents.js";
 import Controls from "./controls.js";
 import Timer from "./timer.js";
 import themeSwap from "./themeSwap.js"
@@ -35,6 +35,19 @@ let theme = themeSwap({
 
 
 
+/* Volume Control */
+volumeA.addEventListener("change", (x)=>{
+  sound.ambient.volume = x.currentTarget.value / 100;
+})
+volumeR.addEventListener("change", (x)=>{
+  sound.rain.volume = x.currentTarget.value / 100;
+})
+volumeS.addEventListener("change", (x)=>{
+  sound.street.volume = x.currentTarget.value / 100;
+})
+volumeB.addEventListener("change", (x)=>{
+  sound.bonfire.volume = x.currentTarget.value / 100;
+})
 
 
 
@@ -43,13 +56,19 @@ let theme = themeSwap({
 whiteTheme.addEventListener("click", () => {
   theme.swapWhite();
   theme.white();
+  // if(body.classList.contains('dark')){
+  //   box.classList.remove('bg-light');
+  // }
 })
 
 darkTheme.addEventListener("click", () => {
   theme.swapDark()
   theme.dark()
+  // if(!document.querySelector(".toggle").classList.contains("dark")){
+  //   box.classList.remove('bg-dark');
+    
+  // }
 })
-
 
 /*Background on selected Sounds*/
 ambient.addEventListener("click", ()=>{

@@ -132,7 +132,7 @@ main .box{
 
 main .box input[type=range]{
   -webkit-appearance: none;
-  cursor: pointer;
+
 
   height: 0.7rem;
   width: 9.0rem;

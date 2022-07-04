@@ -8,7 +8,12 @@ let main = document.querySelector(".main");
 let ambient = document.querySelector(".ambient");
 let rain = document.querySelector(".rain");
 let street = document.querySelector(".street");
-let bonfire = document.querySelector(".bonfire")
+let bonfire = document.querySelector(".bonfire");
+let volumeA = document.querySelector("#volumeAmbient");
+let volumeR = document.querySelector("#volumeRain");
+let volumeS = document.querySelector("#volumeStreet");
+let volumeB = document.querySelector("#volumeBonfire");
+
 
 let box = document.querySelector(".box");
 
@@ -41,5 +46,10 @@ export{
   ambient,
   rain,
   street,
-  bonfire
+  bonfire,
+  volumeA,
+  volumeR,
+  volumeS,
+  volumeB
+
 }
