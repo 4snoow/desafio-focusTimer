@@ -39,17 +39,10 @@ let theme = themeSwap({
 
 
 
-
-
-
-
-
-
 /* Swap theme */
 whiteTheme.addEventListener("click", () => {
   theme.swapWhite();
   theme.white();
-
 })
 
 darkTheme.addEventListener("click", () => {
@@ -60,19 +53,22 @@ darkTheme.addEventListener("click", () => {
 
 /*Background on selected Sounds*/
 ambient.addEventListener("click", ()=>{
-    
-    if(ambient.classList.contains('bg-light')){
+  if(ambient.classList.contains('bg-light')){
+    ambient.addEventListener("click", ()=>{
+    theme.unselectedAmbientLight();
+    sound.ambient.pause();
+    })
+  } else if(ambient.classList.contains('bg-dark')){
       ambient.addEventListener("click", ()=>{
       theme.unselectedAmbientLight();
       sound.ambient.pause();
-      
       })
-    } else {
-      ambient.addEventListener("click", ()=>{
+  } else{
+    ambient.addEventListener("click", ()=>{
       theme.selectedAmbientLight();
       sound.ambientSound();
       })
-    }
+   }
 })
 
 
@@ -82,7 +78,12 @@ rain.addEventListener("click", ()=>{
     theme.unselectedRainLight();
     sound.rain.pause()
     })
-  } else {
+  } else if(rain.classList.contains('bg-dark')){
+      rain.addEventListener("click", ()=>{
+      theme.unselectedRainLight();
+      sound.rain.pause();
+      })
+  } else  {
     rain.addEventListener("click", ()=>{
       theme.selectedRainLight();
       sound.rainSound();
@@ -97,6 +98,11 @@ street.addEventListener("click", ()=>{
     theme.unselectedStreetLight();
     sound.street.pause();
     })
+  } else if(street.classList.contains('bg-dark')){
+      street.addEventListener("click", ()=>{
+      theme.unselectedStreetLight();
+      sound.street.pause();
+      })
   } else {
     street.addEventListener("click", ()=>{
       theme.selectedStreetLight();
@@ -112,7 +118,14 @@ bonfire.addEventListener("click", ()=>{
     theme.unselectedBonfireLight();
     sound.bonfire.pause();
     })
-  } else {
+  } else if(bonfire.classList.contains('bg-dark')){
+    bonfire.addEventListener("click", ()=>{
+    theme.unselectedBonfireLight();
+    sound.bonfire.pause();
+    })
+}
+  
+  else {
     bonfire.addEventListener("click", ()=>{
       theme.selectedBonfireLight();
       sound.bonfireSound();

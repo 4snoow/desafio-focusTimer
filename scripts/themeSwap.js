@@ -49,11 +49,20 @@ export default function themeSwap({
 
 
   function selectedAmbientLight(){
-    ambient.classList.add('bg-light')
-    
+  
+    if(box.classList.contains('dark')){
+      ambient.classList.add('bg-dark')
+    } else{
+      ambient.classList.add('bg-light')
+    }
+
   }
   function unselectedAmbientLight(){
-    ambient.classList.remove('bg-light')
+    if(box.classList.contains('dark')){
+      ambient.classList.remove('bg-dark')
+    } else{
+      ambient.classList.remove('bg-light')
+    }
   }
 
 
@@ -61,34 +70,59 @@ export default function themeSwap({
 
   function selectedRainLight(){
     
-    rain.classList.add('bg-light')
-    
+    if(box.classList.contains('dark')){
+      rain.classList.add('bg-dark')
+    } else{
+      rain.classList.add('bg-light')
+    }
   }
 
   function unselectedRainLight(){
-    rain.classList.remove('bg-light')
+    if(box.classList.contains('dark')){
+      rain.classList.remove('bg-dark')
+    } else{
+      rain.classList.remove('bg-light')
+    }
   }
 
 
 
   function selectedStreetLight(){
-    
-    street.classList.add('bg-light')
+    if(box.classList.contains('dark')){
+      street.classList.add('bg-dark')
+    } else{
+      street.classList.add('bg-light')
+    }
     
   }
 
   function unselectedStreetLight(){
-    street.classList.remove('bg-light')
+    if(box.classList.contains('dark')){
+      street.classList.remove('bg-dark')
+    } else{
+      street.classList.remove('bg-light')
+    }
   }
   
 
   function selectedBonfireLight(){
-    bonfire.classList.add('bg-light')
+    if(box.classList.contains('dark')){
+      bonfire.classList.add('bg-dark')
+    } else{
+      bonfire.classList.add('bg-light')
+    }
   }
 
   function unselectedBonfireLight(){
-    bonfire.classList.remove('bg-light')
+    if(box.classList.contains('dark')){
+      bonfire.classList.remove('bg-dark')
+    } else{
+      bonfire.classList.remove('bg-light')
+    }
   }
+
+
+
 
   
 return{
@@ -103,7 +137,7 @@ return{
   unselectedAmbientLight,
   unselectedRainLight,
   unselectedStreetLight,
-  unselectedBonfireLight
+  unselectedBonfireLight,
 
 }
 }
