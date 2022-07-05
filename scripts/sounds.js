@@ -1,39 +1,52 @@
 export default function Sounds(){
-  const ambient = new Audio('./sounds/Floresta.wav');
-  const rain = new Audio('./sounds/Chuva.wav');
-  const street = new Audio('./sounds/Cafeteria.wav');
-  const bonfire = new Audio('./sounds/Lareira.wav');
+  const ambientS = new Audio('./sounds/Floresta.wav');
+  const rainS = new Audio('./sounds/Chuva.wav');
+  const streetS= new Audio('./sounds/Cafeteria.wav');
+  const bonfireS = new Audio('./sounds/Lareira.wav');
   
-  ambient.loop = true;
-  rain.loop = true;
-  street.loop = true;
-  bonfire.loop = true;
+  ambientS.loop = true;
+  rainS.loop = true;
+  streetS.loop = true;
+  bonfireS.loop = true;
 
 
   function ambientSound(){
-    ambient.play()
+    ambientS.play()
   }
+ 
 
   function rainSound(){
-    rain.play()
+    rainS.play()
   }
+  
+
 
   function streetSound(){
-    street.play()
+    streetS.play()
   }
+ 
 
   function bonfireSound(){
-    bonfire.play()
+    bonfireS.play()
   }
+
+  function pauseAllOnThemeChange(){
+    bonfireS.pause()
+    streetS.pause()
+    rainS.pause()
+    ambientS.pause()
+  }
+  
 
   return {
     ambientSound,
     rainSound,
     streetSound,
     bonfireSound,
-    ambient,
-    rain,
-    street,
-    bonfire
+    ambientS,
+    rainS,
+    streetS,
+    bonfireS,
+    pauseAllOnThemeChange
   }
 }

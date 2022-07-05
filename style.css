@@ -82,6 +82,11 @@ main .time{
   font-size: 12.6rem;
 
   color: var(--white-theme-svg-outline);
+  
+}
+
+main .time .minutes, .seconds, .separator{
+  transition: all 300ms ease;
 }
 
 main .controls{
@@ -113,6 +118,22 @@ main .musics{
 
   height: auto;
 }
+
+
+.ambient,
+.rain,
+.bonfire,
+.street{
+  transition: all 300ms ease;
+}
+
+.ambient:hover,
+.rain:hover,
+.bonfire:hover,
+.street:hover{
+  transform: scale(1.1);
+}
+
 
 main .box{
   display: flex;
@@ -263,3 +284,7 @@ body.dark svg path{
     margin-top: 5rem;
   }
 }
+
+
+
+

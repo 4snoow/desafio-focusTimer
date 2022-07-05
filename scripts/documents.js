@@ -16,6 +16,11 @@ let volumeB = document.querySelector("#volumeBonfire");
 
 
 let box = document.querySelector(".box");
+let musicBox = document.querySelector(".musics")
+
+
+
+ 
 
 let whiteTheme= document.querySelector(".white-theme-icon");
 let darkTheme = document.querySelector(".dark-theme-icon");
@@ -50,6 +55,6 @@ export{
   volumeA,
   volumeR,
   volumeS,
-  volumeB
+  volumeB,
 
 }

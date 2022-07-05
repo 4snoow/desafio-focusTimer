@@ -16,7 +16,6 @@ export default function themeSwap({
   function swapWhite(){
     whiteTheme.classList.add('hide');
     darkTheme.classList.remove('hide');
-
     
   }
 
@@ -34,6 +33,10 @@ export default function themeSwap({
     displayMin.classList.remove('dark')
     displaySec.classList.remove('dark')
     separator.classList.remove('dark')
+    ambient.classList.remove('bg-dark')
+    rain.classList.remove('bg-dark')
+    street.classList.remove('bg-dark')
+    bonfire.classList.remove('bg-dark')
   }
   
   
@@ -44,6 +47,11 @@ export default function themeSwap({
     displayMin.classList.add('dark')
     displaySec.classList.add('dark')
     separator.classList.add('dark')
+    ambient.classList.remove('bg-light')
+    rain.classList.remove('bg-light')
+    street.classList.remove('bg-light')
+    bonfire.classList.remove('bg-light')
+    
   }
 
 

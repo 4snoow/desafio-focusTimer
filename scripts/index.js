@@ -37,18 +37,17 @@ let theme = themeSwap({
 
 /* Volume Control */
 volumeA.addEventListener("change", (x)=>{
-  sound.ambient.volume = x.currentTarget.value / 100;
+  sound.ambientS.volume = x.currentTarget.value / 100;
 })
 volumeR.addEventListener("change", (x)=>{
-  sound.rain.volume = x.currentTarget.value / 100;
+  sound.rainS.volume = x.currentTarget.value / 100;
 })
 volumeS.addEventListener("change", (x)=>{
-  sound.street.volume = x.currentTarget.value / 100;
+  sound.streetS.volume = x.currentTarget.value / 100;
 })
 volumeB.addEventListener("change", (x)=>{
-  sound.bonfire.volume = x.currentTarget.value / 100;
+  sound.bonfireS.volume = x.currentTarget.value / 100;
 })
-
 
 
 
@@ -56,31 +55,28 @@ volumeB.addEventListener("change", (x)=>{
 whiteTheme.addEventListener("click", () => {
   theme.swapWhite();
   theme.white();
-  // if(body.classList.contains('dark')){
-  //   box.classList.remove('bg-light');
-  // }
+  sound.pauseAllOnThemeChange();
+  
 })
 
 darkTheme.addEventListener("click", () => {
   theme.swapDark()
   theme.dark()
-  // if(!document.querySelector(".toggle").classList.contains("dark")){
-  //   box.classList.remove('bg-dark');
-    
-  // }
+  sound.pauseAllOnThemeChange()
 })
+
 
 /*Background on selected Sounds*/
 ambient.addEventListener("click", ()=>{
   if(ambient.classList.contains('bg-light')){
     ambient.addEventListener("click", ()=>{
     theme.unselectedAmbientLight();
-    sound.ambient.pause();
+    sound.ambientS.pause();
     })
   } else if(ambient.classList.contains('bg-dark')){
       ambient.addEventListener("click", ()=>{
       theme.unselectedAmbientLight();
-      sound.ambient.pause();
+      sound.ambientS.pause();
       })
   } else{
     ambient.addEventListener("click", ()=>{
@@ -95,12 +91,12 @@ rain.addEventListener("click", ()=>{
   if(rain.classList.contains('bg-light')){
     rain.addEventListener("click", ()=>{
     theme.unselectedRainLight();
-    sound.rain.pause()
+    sound.rainS.pause()
     })
   } else if(rain.classList.contains('bg-dark')){
       rain.addEventListener("click", ()=>{
       theme.unselectedRainLight();
-      sound.rain.pause();
+      sound.rainS.pause();
       })
   } else  {
     rain.addEventListener("click", ()=>{
@@ -115,12 +111,12 @@ street.addEventListener("click", ()=>{
   if(street.classList.contains('bg-light')){
     street.addEventListener("click", ()=>{
     theme.unselectedStreetLight();
-    sound.street.pause();
+    sound.streetS.pause();
     })
   } else if(street.classList.contains('bg-dark')){
       street.addEventListener("click", ()=>{
       theme.unselectedStreetLight();
-      sound.street.pause();
+      sound.streetS.pause();
       })
   } else {
     street.addEventListener("click", ()=>{
@@ -135,12 +131,12 @@ bonfire.addEventListener("click", ()=>{
   if(bonfire.classList.contains('bg-light')){
     bonfire.addEventListener("click", ()=>{
     theme.unselectedBonfireLight();
-    sound.bonfire.pause();
+    sound.bonfireS.pause();
     })
   } else if(bonfire.classList.contains('bg-dark')){
     bonfire.addEventListener("click", ()=>{
     theme.unselectedBonfireLight();
-    sound.bonfire.pause();
+    sound.bonfireS.pause();
     })
 }
   
@@ -216,7 +212,8 @@ function timerIncrease(){
 function timerDecrease(){
  let dec = (Number(displayMin.textContent = String(displayMin.textContent - 5).padStart(2,"0")))
 
-if(dec <= 0){
+if(dec < 0){
+  alert("Não pode números a baixo de 0, resetando")
   timer.reset();
 }
 }
