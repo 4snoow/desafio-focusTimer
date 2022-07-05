@@ -211,11 +211,10 @@ function timerIncrease(){
 function timerDecrease(){
  let dec = (Number(displayMin.textContent = String(displayMin.textContent - 5).padStart(2,"0")))
 
-if(dec < 0){
-  alert("Não pode números a baixo de 0, resetando")
+if(dec <= 0){
+  alert("Não é possível decrementar mais que isso, resetando!!")
   timer.reset();
   buttonPause.classList.add('hide')
   buttonPlay.classList.remove('hide')
-
 }
 }
