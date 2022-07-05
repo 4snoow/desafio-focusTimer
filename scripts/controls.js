@@ -15,7 +15,7 @@ export default function Controls({ buttonPlay, buttonPause }) {
   }
 
   function setTime() {
-    let newMinutes = Number(prompt('Informe um tempo para começar!!'))
+    let newMinutes = Number(parseInt(prompt('Informe os minutos para começar!!')))
 
     if (!newMinutes) {
       return

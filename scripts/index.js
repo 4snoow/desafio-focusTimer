@@ -157,6 +157,12 @@ setTime.addEventListener("click", ()=>{
     timer.reset();
     control.resetControl();
     return
+  } else if (newMinutes > 60){
+    alert("Calma! Pra que tantas horas assim ? O limite da sessão é de 60 minutos!! :D")
+    timer.reset()
+    buttonPause.classList.add('hide')
+    buttonPlay.classList.remove('hide')
+    return
   }
 
   timer.formatTime(newMinutes, 0)
@@ -205,7 +211,13 @@ buttonPause.addEventListener("click", ()=>{
 
 /* Increment and Decrement function */
 function timerIncrease(){
-  (Number(displayMin.textContent = String(displayMin.textContent +++ 5).padStart(2, "0")))
+  let inc = (Number(displayMin.textContent = String(displayMin.textContent +++ 5).padStart(2, "0")))
+   if(inc > 60){
+    alert("Calma! Pra que tantas horas assim ? O limite da sessão é de 60 minutos!! :D")
+    timer.reset()
+    buttonPause.classList.add('hide')
+    buttonPlay.classList.remove('hide')
+  }
 }
 
 function timerDecrease(){
@@ -216,5 +228,5 @@ if(dec <= 0){
   timer.reset();
   buttonPause.classList.add('hide')
   buttonPlay.classList.remove('hide')
-}
+} 
 }
