@@ -214,5 +214,8 @@ function timerDecrease(){
 if(dec < 0){
   alert("Não pode números a baixo de 0, resetando")
   timer.reset();
+  buttonPause.classList.add('hide')
+  buttonPlay.classList.remove('hide')
+
 }
 }
