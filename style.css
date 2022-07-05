@@ -16,6 +16,8 @@
 --black-theme-bg:hsl(0, 0%, 0%);
 --black-theme-ambient-box-selected:hsl(195, 74%, 15%);
 
+--hover-Dark-Theme: hsl(194, 100%, 50%);
+
 
 font-size: 62.5%;
 }
@@ -67,6 +69,7 @@ main{
   display: grid;
   grid-template-columns: 1fr 1fr;
   margin: 0 auto;
+  border-radius: 1rem;
 }
 
 main .temporize{
@@ -130,7 +133,8 @@ main .musics{
 .ambient:hover,
 .rain:hover,
 .bonfire:hover,
-.street:hover{
+.street:hover,
+.dark-theme-icon:hover{
   transform: scale(1.1);
 }
 
@@ -176,10 +180,29 @@ main .box input[type=range]::-webkit-slider-thumb{
 /*DARK THEME ================================================================*/
 
 body.dark{
-  background: black;
+  animation: bgChange 600ms forwards ease;
 }
 body.dark svg path{
   fill: var(--black-theme-svg-outline);
+}
+
+body.dark .ambient:hover,
+body.dark .rain:hover,
+body.dark .bonfire:hover,
+body.dark .street:hover
+{
+  transform: scale(1.1);
+  box-shadow: 0 0 15px 5px  #00c2ff;
+}
+
+body.dark .dark-theme-icon:hover path,
+body.dark .play:hover path,
+body.dark .pause:hover path,
+body.dark .stop:hover path,
+body.dark .increase:hover path,
+body.dark .decrease:hover path,
+body.dark .setting:hover path{
+  animation: svg-animation 2s ease alternate;
 }
 
 .minutes.dark, .separator.dark, .seconds.dark{
@@ -286,5 +309,34 @@ body.dark svg path{
 }
 
 
+/*ANIMATIONS================================================================*/
+@keyframes svg-animation{
+  0% {
+    stroke-width: 0;
+    stroke-dasharray: 1 100;
+    fill: transparent;
+  }
+  25% {
+    stroke-width: 3; 
+  }
+  60%, 100% {
+    stroke-width: 0.3;
+    stroke-dasharray: 100 1;
+    fill: var(--hover-Dark-Theme);  
+  }
+}
 
+@keyframes bgChange{
+  0%{
+    background: transparent;
+    transform: translateY(-15px);
+  }
 
+  100%{
+    transform: translateY(0);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url('./assets/luke-stackpoole-TRXSkmJb40c-unsplash.jpg');
+  }
+}
