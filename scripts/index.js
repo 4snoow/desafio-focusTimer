@@ -56,6 +56,7 @@ whiteTheme.addEventListener("click", () => {
   theme.swapWhite();
   theme.white();
   sound.pauseAllOnThemeChange();
+
   
 })
 
@@ -180,8 +181,6 @@ buttonStop.addEventListener("click", ()=>{
 /*Increase and decrease time */
 increaseTime.addEventListener("click", ()=>{
   timerIncrease()
-
-  
 })
 
 decreaseTime.addEventListener("click",()=>{

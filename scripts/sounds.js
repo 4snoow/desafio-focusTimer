@@ -3,6 +3,7 @@ export default function Sounds(){
   const rainS = new Audio('./sounds/Chuva.wav');
   const streetS= new Audio('./sounds/Cafeteria.wav');
   const bonfireS = new Audio('./sounds/Lareira.wav');
+  const timeEnd = new Audio("https://github.com/maykbrito/automatic-video-creator/blob/master/audios/kichen-timer.mp3?raw=true");
   
   ambientS.loop = true;
   rainS.loop = true;
@@ -30,6 +31,10 @@ export default function Sounds(){
     bonfireS.play()
   }
 
+  function timerEnds(){
+    timeEnd.play()
+  }
+
   function pauseAllOnThemeChange(){
     bonfireS.pause()
     streetS.pause()
@@ -47,6 +52,7 @@ export default function Sounds(){
     rainS,
     streetS,
     bonfireS,
-    pauseAllOnThemeChange
+    pauseAllOnThemeChange,
+    timerEnds
   }
 }

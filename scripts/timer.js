@@ -1,4 +1,5 @@
 import Controls from "./controls.js";
+import Sounds from "./sounds.js";
 
 export default function Timer({
   displayMin,
@@ -26,13 +27,14 @@ export default function Timer({
       let minutes = Number(displayMin.textContent);
 
       if (seconds <= 0 && minutes <= 0){
+        Sounds().timerEnds();
         reset();
         Controls().resetControl();
         return
       }
 
       if(seconds <= 0){
-        seconds = 4;
+        seconds = 6;
         --minutes;
       }
 
