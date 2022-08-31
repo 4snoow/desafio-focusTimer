@@ -349,17 +349,18 @@ body.dark .setting:hover path{
   header .white-theme-icon{
     position: absolute;
 
-    right: 0;
-    padding-right: 1rem;
-    padding-left: 1rem;
+    margin-top: 22%;
+    margin-right: 22%;
+
+
+    
   }
 
   header .dark-theme-icon{
     position: absolute;
 
-    right: 0;
-    padding-right: 1rem;
-    padding-left: 1rem;
+    margin-top: 22%;
+    margin-right: 22%;
   }
 
   
