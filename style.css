@@ -1,29 +1,26 @@
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-:root{
+:root {
+  --white-theme-svg-outline: hsl(240, 6%, 21%);
+  --white-theme-ambient-box: hsl(240, 9%, 89%);
+  --white-theme-bg: hsl(0, 0%, 100%);
+  --white-theme-ambient-box-selected: hsl(194, 97%, 31%);
 
---white-theme-svg-outline:hsl(240, 6%, 21%);
---white-theme-ambient-box:hsl(240, 9%, 89%);
---white-theme-bg:hsl(0, 0%, 100%);
---white-theme-ambient-box-selected:hsl(194, 97%, 31%);
+  --black-theme-svg-outline: hsl(240, 24%, 93%);
+  --black-theme-ambient-box: hsl(240, 6%, 17%);
+  --black-theme-bg: hsl(0, 0%, 0%);
+  --black-theme-ambient-box-selected: hsl(195, 74%, 15%);
 
---black-theme-svg-outline: hsl(240, 24%, 93%);
---black-theme-ambient-box:hsl(240, 6%, 17%);
---black-theme-bg:hsl(0, 0%, 0%);
---black-theme-ambient-box-selected:hsl(195, 74%, 15%);
+  --hover-Dark-Theme: hsl(194, 100%, 50%);
 
---hover-Dark-Theme: hsl(194, 100%, 50%);
-
-
-font-size: 62.5%;
+  font-size: 62.5%;
 }
 
-
- body {
+body {
   font-size: 1.6rem;
   min-height: 100vh;
   width: 100%;
@@ -38,78 +35,74 @@ body svg path {
   fill: var(--white-theme-svg-outline);
 }
 
-.hide{
+.hide {
   display: none;
 }
 
-
 /* Header ####################################*/
-header{
+header {
   width: 80%;
 
   margin-top: 5rem;
   height: 5rem;
-  
-  
+
   display: flex;
   justify-content: end;
 }
 
-
-header svg{
+header svg {
   cursor: pointer;
 }
 
-
 /* Main ####################################*/
-main{
+main {
   width: 70%;
   height: 34.6rem;
-  
+
   display: grid;
   grid-template-columns: 1fr 1fr;
   margin: 0 auto;
   border-radius: 1rem;
 }
 
-main .temporize{
-
+main .temporize {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-main .time{
+main .time {
   display: flex;
   font-size: 12.6rem;
 
   color: var(--white-theme-svg-outline);
-  
 }
 
-main .time .minutes, .seconds, .separator{
+main .time .minutes,
+.seconds,
+.separator {
   transition: all 300ms ease;
 }
 
-main .controls{
+main .controls {
   display: flex;
-  gap: 4.0rem;
+  gap: 4rem;
   margin-top: 4.8rem;
 }
 
-main .controls button{
+main .controls button {
   background: none;
   border: none;
 }
 
-main .controls button svg{
+main .controls button svg {
   cursor: pointer;
 }
 
 /* MUSICS ####################################*/
 
-main .musics{
+main .musics {
   display: grid;
   grid-template-columns: 1fr 1fr;
 
@@ -122,11 +115,10 @@ main .musics{
   height: auto;
 }
 
-
 .ambient,
 .rain,
 .bonfire,
-.street{
+.street {
   transition: all 300ms ease;
 }
 
@@ -134,12 +126,11 @@ main .musics{
 .rain:hover,
 .bonfire:hover,
 .street:hover,
-.dark-theme-icon:hover{
+.dark-theme-icon:hover {
   transform: scale(1.1);
 }
 
-
-main .box{
+main .box {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -151,24 +142,22 @@ main .box{
 
   border-radius: 2.4rem;
 
-  background:var(--white-theme-ambient-box);
+  background: var(--white-theme-ambient-box);
   cursor: pointer;
 }
 
-main .box input[type=range]{
+main .box input[type='range'] {
   -webkit-appearance: none;
 
-
   height: 0.7rem;
-  width: 9.0rem;
+  width: 9rem;
 
   border-radius: 1rem;
 
-  background:var(--white-theme-svg-outline);
-
+  background: var(--white-theme-svg-outline);
 }
 
-main .box input[type=range]::-webkit-slider-thumb{
+main .box input[type='range']::-webkit-slider-thumb {
   -webkit-appearance: none;
 
   width: 2rem;
@@ -179,20 +168,19 @@ main .box input[type=range]::-webkit-slider-thumb{
 
 /*DARK THEME ================================================================*/
 
-body.dark{
+body.dark {
   animation: bgChange 600ms forwards ease;
 }
-body.dark svg path{
+body.dark svg path {
   fill: var(--black-theme-svg-outline);
 }
 
 body.dark .ambient:hover,
 body.dark .rain:hover,
 body.dark .bonfire:hover,
-body.dark .street:hover
-{
+body.dark .street:hover {
   transform: scale(1.1);
-  box-shadow: 0 0 15px 5px  #00c2ff;
+  box-shadow: 0 0 15px 5px #00c2ff;
 }
 
 body.dark .dark-theme-icon:hover path,
@@ -201,101 +189,97 @@ body.dark .pause:hover path,
 body.dark .stop:hover path,
 body.dark .increase:hover path,
 body.dark .decrease:hover path,
-body.dark .setting:hover path{
+body.dark .setting:hover path {
   animation: svg-animation 2s ease alternate;
 }
 
-.minutes.dark, .separator.dark, .seconds.dark{
+.minutes.dark,
+.separator.dark,
+.seconds.dark {
   color: var(--black-theme-svg-outline);
 }
 
-.dark .box{
+.dark .box {
   background: var(--black-theme-ambient-box);
 }
 
-.dark .box input[type=range]{
-  background:var(--black-theme-svg-outline) ;
+.dark .box input[type='range'] {
+  background: var(--black-theme-svg-outline);
 }
 
-.dark .box input[type=range]::-webkit-slider-thumb{
-  background:var(--black-theme-svg-outline) ;
+.dark .box input[type='range']::-webkit-slider-thumb {
+  background: var(--black-theme-svg-outline);
 }
-
 
 /*OnClick White Theme ================================================================*/
 .ambient.bg-light,
 .rain.bg-light,
-.street.bg-light, 
+.street.bg-light,
 .bonfire.bg-light {
   background: var(--white-theme-ambient-box-selected);
 }
- 
 
-.ambient.bg-light  svg path,
+.ambient.bg-light svg path,
 .rain.bg-light svg path,
 .street.bg-light svg path,
-.bonfire.bg-light svg path{
+.bonfire.bg-light svg path {
   fill: var(--black-theme-svg-outline);
 }
 
-
-.ambient.bg-light  input[type=range],
-.rain.bg-light  input[type=range],
-.street.bg-light  input[type=range],
-.bonfire.bg-light  input[type=range]{
-  background:var(--black-theme-svg-outline);
+.ambient.bg-light input[type='range'],
+.rain.bg-light input[type='range'],
+.street.bg-light input[type='range'],
+.bonfire.bg-light input[type='range'] {
+  background: var(--black-theme-svg-outline);
 }
 
-
-.ambient.bg-light input[type=range]::-webkit-slider-thumb,
-.rain.bg-light input[type=range]::-webkit-slider-thumb,
-.street.bg-light input[type=range]::-webkit-slider-thumb,
-.bonfire.bg-light input[type=range]::-webkit-slider-thumb{
-  background:var(--black-theme-svg-outline);
+.ambient.bg-light input[type='range']::-webkit-slider-thumb,
+.rain.bg-light input[type='range']::-webkit-slider-thumb,
+.street.bg-light input[type='range']::-webkit-slider-thumb,
+.bonfire.bg-light input[type='range']::-webkit-slider-thumb {
+  background: var(--black-theme-svg-outline);
 }
 
-/*OnClick Dark Theme ================================================================*/.ambient.bg-dark,
+/*OnClick Dark Theme ================================================================*/
+.ambient.bg-dark,
 .rain.bg-dark,
-.street.bg-dark, 
+.street.bg-dark,
 .bonfire.bg-dark {
   background: var(--black-theme-ambient-box-selected);
-  
 }
 
-.ambient.bg-dark  svg path,
+.ambient.bg-dark svg path,
 .rain.bg-dark svg path,
 .street.bg-dark svg path,
-.bonfire.bg-dark svg path{
+.bonfire.bg-dark svg path {
   fill: var(--black-theme-svg-outline);
 }
 
-.ambient.bg-dark  input[type=range],
-.rain.bg-dark  input[type=range],
-.street.bg-dark  input[type=range],
-.bonfire.bg-dark  input[type=range]{
-  background:var(--black-theme-svg-outline);
+.ambient.bg-dark input[type='range'],
+.rain.bg-dark input[type='range'],
+.street.bg-dark input[type='range'],
+.bonfire.bg-dark input[type='range'] {
+  background: var(--black-theme-svg-outline);
 }
 
-.ambient.bg-dark input[type=range]::-webkit-slider-thumb,
-.rain.bg-dark input[type=range]::-webkit-slider-thumb,
-.street.bg-dark input[type=range]::-webkit-slider-thumb,
-.bonfire.bg-dark input[type=range]::-webkit-slider-thumb{
-  background:var(--black-theme-svg-outline);
+.ambient.bg-dark input[type='range']::-webkit-slider-thumb,
+.rain.bg-dark input[type='range']::-webkit-slider-thumb,
+.street.bg-dark input[type='range']::-webkit-slider-thumb,
+.bonfire.bg-dark input[type='range']::-webkit-slider-thumb {
+  background: var(--black-theme-svg-outline);
 }
- 
 
 /*MEDIA================================================================*/
 
-
-@Media(max-width : 900px){
-  body{
+@media (max-width: 900px) {
+  body {
     padding: 0;
     overflow: hidden;
     min-height: 100vh;
     width: 100%;
   }
 
-  header{
+  header {
     padding-right: 1rem;
   }
 
@@ -312,85 +296,81 @@ body.dark .setting:hover path{
   }
 }
 
-@Media(max-width : 460px){
-  body{
+@media (max-width: 460px) {
+  body {
     min-height: 100vh;
     width: 100%;
     overflow-x: hidden;
+    overflow-y: auto;
   }
-  main .controls{
+  main .controls {
     display: grid;
     grid-template-areas:
-    'A B'
-    'C D'
-    'E E' ;
+      'A B'
+      'C D'
+      'E E';
   }
 
-  main .musics{
-    
-  }
+ 
 
-  main .controls .play{
+  main .controls .play {
     grid-area: A;
   }
 
-  main .controls .stop{
+  main .controls .stop {
     grid-area: B;
   }
 
-  main .controls .increase{
+  main .controls .increase {
     grid-area: C;
   }
 
-  main .controls .decrease{
+  main .controls .decrease {
     grid-area: D;
   }
 
-  main .controls .setting{
+  main .controls .setting {
     grid-area: E;
   }
 
-  header .white-theme-icon{
-    position: absolute;
-
-    top: 27vh;
-
-  }
-
-  header .dark-theme-icon{
+  header .white-theme-icon {
     position: absolute;
 
     top: 27vh;
   }
 
-  
+  header .dark-theme-icon {
+    position: absolute;
+
+    top: 27vh;
+  }
 }
 
-
 /*ANIMATIONS================================================================*/
-@keyframes svg-animation{
+@keyframes svg-animation {
   0% {
     stroke-width: 0;
     stroke-dasharray: 1 100;
     fill: transparent;
   }
   25% {
-    stroke-width: 3; 
+    stroke-width: 3;
   }
-  60%, 100% {
+  60%,
+  100% {
     stroke-width: 0.3;
     stroke-dasharray: 100 1;
-    fill: var(--hover-Dark-Theme);  
+    fill: var(--hover-Dark-Theme);
   }
 }
 
-@keyframes bgChange{
-  0%{
+@keyframes bgChange {
+  0% {
     background: transparent;
     transform: translateY(-15px);
   }
 
-  100%{
+  100% {
     transform: translateY(0);
     background-position: center;
     background-repeat: no-repeat;
