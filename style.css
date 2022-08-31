@@ -291,6 +291,8 @@ body.dark .setting:hover path{
   body{
     padding: 0;
     overflow: hidden;
+    min-height: 100vh;
+    width: 100%;
   }
 
   header{
@@ -312,7 +314,8 @@ body.dark .setting:hover path{
 
 @Media(max-width : 460px){
   body{
-    
+    min-height: 100vh;
+    width: 100%;
     overflow: hidden;
   }
   main .controls{
