@@ -259,6 +259,7 @@ body.dark .setting:hover path{
 .street.bg-dark, 
 .bonfire.bg-dark {
   background: var(--black-theme-ambient-box-selected);
+  
 }
 
 .ambient.bg-dark  svg path,
@@ -288,7 +289,8 @@ body.dark .setting:hover path{
 
 @Media(max-width : 900px){
   body{
-    padding: 0 ;
+    padding: 0;
+    overflow: hidden;
   }
 
   header{
@@ -306,6 +308,58 @@ body.dark .setting:hover path{
     padding: 0;
     margin-top: 5rem;
   }
+}
+
+@Media(max-width : 460px){
+  body{
+    
+    overflow: hidden;
+  }
+  main .controls{
+    display: grid;
+    grid-template-areas:
+    'A B'
+    'C D'
+    'E E' ;
+  }
+
+  main .controls .play{
+    grid-area: A;
+  }
+
+  main .controls .stop{
+    grid-area: B;
+  }
+
+  main .controls .increase{
+    grid-area: C;
+  }
+
+  main .controls .decrease{
+    grid-area: D;
+  }
+
+  main .controls .setting{
+    grid-area: E;
+  }
+
+  header .white-theme-icon{
+    position: absolute;
+
+    right: 0;
+    padding-right: 1rem;
+    padding-left: 1rem;
+  }
+
+  header .dark-theme-icon{
+    position: absolute;
+
+    right: 0;
+    padding-right: 1rem;
+    padding-left: 1rem;
+  }
+
+  
 }
 
 
