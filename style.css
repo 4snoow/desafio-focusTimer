@@ -303,6 +303,15 @@ body.dark .setting:hover path {
     overflow-x: hidden;
     overflow-y: auto;
   }
+  
+  body.dark{
+    background: black;
+  }
+
+  main{
+    padding-top: 3rem;
+  }
+
   main .controls {
     display: grid;
     grid-template-areas:
